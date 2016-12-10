@@ -24,11 +24,11 @@ our $scenario = {
             perl_cmdline=>["-Mstrict", "-Mwarnings", "-MC::Blocks", "-MC::Blocks::PerlAPI", "-MC::Blocks::Types=uint", "-e", 'my uint $foo=0; cblock { $foo=5; }'],
             description => <<'_',
 
-This is "some idea for the minimal cost of really using C::Blocks.
+This is "some idea for the minimal cost of really using C::Blocks".
 
 _
         },
-    ];
+    ],
 };
 
 1;
