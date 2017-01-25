@@ -59,6 +59,7 @@ _
         },
         {
             name => 'C::Blocks',
+            module => 'C::Blocks',
             code => sub {
                 use C::Blocks;
                 use C::Blocks::Types qw(char_array);
