@@ -6,7 +6,7 @@ package Bencher::Scenario::CBlocks::IO;
 use 5.010001;
 use strict;
 use warnings;
-use Log::Any '$log';
+use Log::ger;
 
 use File::Temp qw(tempfile);
 
@@ -25,7 +25,7 @@ _
     precision => 6,
     before_bench => sub {
         (my $fh, $infile_path) = tempfile();
-        $log->debugf("Input temp file is %s", $infile_path);
+        log_debug("Input temp file is %s", $infile_path);
         for my $i (1..100*1024) {
             if ($i % 10 == 0) {
                 print $fh "Fred Fred\n";
@@ -35,11 +35,11 @@ _
         }
         close $fh;
         (my $out_fh, $outfile_path) = tempfile();
-        $log->debugf("Output temp file is %s", $outfile_path);
+        log_debug("Output temp file is %s", $outfile_path);
     },
     after_bench => sub {
-        if ($log->is_debug) {
-            $log->debugf("Keeping input and output temp files");
+        if (log_is_debug) {
+            log_debug("Keeping input and output temp files");
         } else {
             unlink $infile_path;
             unlink $outfile_path;
