@@ -2,3 +2,4 @@ Bencher-Scenarios-CBlocks-*
 .build
 *~
 nytprof*
+.DS_Store
